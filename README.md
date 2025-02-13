@@ -42,7 +42,7 @@
 
 ### 下载安装
 
-- Android：[下载链接]
+- Android：[下载链接](http://oss.ahhl.cn/apps/v1.1.5.apk)
 - iOS：即将上线
 
 ### 使用方法
