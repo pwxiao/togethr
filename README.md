@@ -6,12 +6,35 @@
 
 - 🎥 **视频同步播放**：支持多人实时同步观看视频
 - 💬 **实时聊天**：观影过程中可以实时交流讨论
-- 🔄 **进度同步**：自动同步所有观看者的播放进度
+- 🔄 **全网资源**：打通全网资源，支持全网视频播放
 - 📱 **跨平台支持**：支持 Android 和 iOS 设备
 - 🎨 **Material Design 3**：采用最新的 Material You 设计语言
 - 🌙 **深色模式**：支持浅色/深色主题切换
 
 ## 📱 应用截图
+
+<img src="2.jpg" style="">
+
+
+
+<table>
+  <tr>
+    <td><center><img src="1.jpg" style="max-width: 200px; height: 350px;"></center></td>
+    <td><center><img src="3.jpg" style="max-width: 200px; height: 350px;"></center></td>
+    <td><center><img src="4.jpg" style="max-width: 200px; height: 350px;"></center></td>
+    <td><center><img src="5.jpg" style="max-width: 200px; height: 350px;"></center></td>
+    
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><center><img src="6.jpg" style="max-width: 200px; height: 350px;"></center></td>
+    <td><center><img src="7.jpg" style="max-width: 200px; height: 350px;"></center></td>
+    <td><center><img src="8.jpg" style="max-width: 200px; height: 350px;"></center></td>
+    <td><center><img src="9.jpg" style="max-width: 200px; height: 350px;"></center></td>
+  </tr>
+</table>
 
 
 
@@ -36,4 +59,3 @@
 ## 👥 联系我们
 
 - QQ群：679961545
-- 项目主页：https://ahhl.cn
