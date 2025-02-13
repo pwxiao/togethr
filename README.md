@@ -40,10 +40,17 @@
 
 ## 🚀 开始使用
 
-### 下载安装
+### 📥 下载安装
 
-- Android：[下载链接](http://oss.ahhl.cn/apps/v1.1.5.apk)
-- iOS：即将上线
+<div align="center">
+
+[![Android 下载](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](http://oss.ahhl.cn/apps/v1.1.5.apk)
+</div>
+
+| 平台 | 状态 | 下载方式 |
+|------|------|----------|
+| Android | ✅ 已发布 | [直接下载](http://oss.ahhl.cn/apps/v1.1.5.apk)  |
+| iOS | ⏳ 开发中 | 即将上线 |
 
 ### 使用方法
 
