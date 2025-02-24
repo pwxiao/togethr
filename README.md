@@ -45,7 +45,7 @@
 
 | 平台 | 状态 | 下载方式 |
 |------|------|----------|
-| Android | ✅ 已发布 | [直接下载](https://www.123684.com/s/5lHyTd-fyOHv)  |
+| Android | ✅ 已发布 | [直接下载](https://www.123684.com/s/5lHyTd-bhRHv)  |
 | iOS | ⏳ 开发中 | 即将上线 |
 
 ### 使用方法
