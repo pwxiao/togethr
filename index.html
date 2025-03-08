@@ -294,6 +294,26 @@
         section[id] {
             scroll-margin-top: 20px;
         }
+
+        /* 添加隐私政策和用户协议样式 */
+        .legal-links {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+        
+        .legal-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .legal-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -428,6 +448,12 @@
                     <span class="material-icons">chat</span>
                     微信公众号
                 </a>
+            </div>
+            
+            <!-- 添加隐私政策和用户协议链接 -->
+            <div class="legal-links">
+                <a href="./privacy.html">隐私政策</a>
+                <a href="./terms.html">用户协议</a>
             </div>
         </footer>
     </div>
