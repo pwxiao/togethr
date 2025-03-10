@@ -4,61 +4,342 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>搜索引擎帮助文档 - 一起看</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
+        :root {
+            --md-sys-color-primary: #1976D2;
+            --md-sys-color-primary-dark: #1565C0;
+            --md-sys-color-secondary: #42A5F5;
+            --md-sys-color-surface: #FFFFFF;
+            --md-sys-color-background: #F5F5F5;
+            --md-sys-color-on-surface: #212121;
+        }
+
         body {
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f5f5f5;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--md-sys-color-background);
+            color: var(--md-sys-color-on-surface);
+            line-height: 1.6;
         }
 
-        .container {
+        .header {
+            background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+            color: white;
+            padding: 24px;
             text-align: center;
-            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
-        .updating-text {
-            font-size: 24px;
-            color: #1976D2;
+        .header h1 {
+            font-size: 2em;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .main-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            color: var(--md-sys-color-primary);
+            font-size: 1.5em;
             margin-bottom: 16px;
+            display: flex;
+            align-items: center;
         }
 
-        .dots {
+        .section h2 .material-icons {
+            margin-right: 8px;
+        }
+
+        .note-box {
+            background-color: rgba(25, 118, 210, 0.1);
+            border-left: 4px solid var(--md-sys-color-primary);
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+
+        .back-to-home {
             display: inline-block;
-            animation: dots 1.5s infinite;
-        }
-
-        @keyframes dots {
-            0% { content: '.'; }
-            33% { content: '..'; }
-            66% { content: '...'; }
-        }
-
-        .back-link {
-            margin-top: 20px;
-        }
-
-        .back-link a {
-            color: #1976D2;
+            margin-top: 24px;
+            color: var(--md-sys-color-primary);
             text-decoration: none;
+            font-weight: 500;
         }
 
-        .back-link a:hover {
+        .back-to-home:hover {
             text-decoration: underline;
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: rgba(25, 118, 210, 0.1);
+            color: var(--md-sys-color-primary);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: rgba(0,0,0,0.02);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status-inactive {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .copy-btn {
+            background-color: var(--md-sys-color-primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--md-sys-color-primary-dark);
+        }
+
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        .warning-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
     </style>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('已复制到剪贴板');
+            }, function(err) {
+                console.error('复制失败: ', err);
+            });
+        }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <div class="updating-text">
-            更新中<span class="dots">...</span>
-        </div>
-        <div class="back-link">
-            <a href="index.html">返回首页</a>
-        </div>
+    <div class="header">
+        <h1>搜索引擎帮助文档</h1>
+        <p>了解如何添加和使用自定义搜片引擎</p>
+    </div>
+
+    <div class="main-container">
+        <section class="section">
+            <h2><span class="material-icons">info</span> 什么是苹果CMS搜索引擎</h2>
+            <p>苹果CMS（MacCMS）是一款广泛使用的内容管理系统，专为视频网站设计。我们的App支持添加基于苹果CMS API格式的搜索引擎，这使您能够访问更多的视频资源。</p>
+            
+            <div class="note-box">
+                <strong>技术说明：</strong> 苹果CMS API通常以JSON或XML格式返回数据，包含视频的标题、分类、播放地址等信息。我们的App支持标准的苹果CMS API接口，格式为：<br><br>
+                <code>https://example.com/api.php/provide/vod/at/json</code>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span class="material-icons">add_circle</span> 如何添加搜索引擎</h2>
+            <p>您可以通过以下步骤添加自定义搜索引擎：</p>
+            <ol>
+                <li>在App中进入"搜索"页面</li>
+                <li>点击右上角的"+"图标</li>
+                <li>输入搜索引擎的名称和API地址</li>
+                <li>点击"保存"完成添加</li>
+            </ol>
+            
+            <div class="warning-box">
+                <strong>注意：</strong> 请确保添加的搜索引擎是可靠的来源。使用不可靠的搜索引擎可能导致App不稳定或无法正常工作。
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span class="material-icons">list</span> 推荐搜索引擎列表</h2>
+            <p>以下是我们测试过的可用搜索引擎列表。您可以点击"复制"按钮复制API地址，然后在App中添加。</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>API地址</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>未知</td>
+                        <td>https://kekedy.icu/caiji.php</td>
+                        <td><span class="status-badge status-active">可用</span></td>
+                        <td><button class="copy-btn" onclick="copyToClipboard('https://kekedy.icu/caiji.php')">复制</button></td>
+                    </tr>
+                    <tr>
+                        <td>卧龙</td>
+                        <td>https://collect.wolongzyw.com/api.php/provide/vod/at/json</td>
+                        <td><span class="status-badge status-active">可用</span></td>
+                        <td><button class="copy-btn" onclick="copyToClipboard('https://collect.wolongzyw.com/api.php/provide/vod/at/json')">复制</button></td>
+                    </tr>
+                    <tr>
+                        <td>四圈</td>
+                        <td>https://pg.fenwe078.cf/api.php/provide/vod/</td>
+                        <td><span class="status-badge status-active">可用</span></td>
+                        <td><button class="copy-btn" onclick="copyToClipboard('https://pg.fenwe078.cf/api.php/provide/vod/')">复制</button></td>
+                    </tr>
+                    <tr>
+                        <td>量子</td>
+                        <td>https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8/</td>
+                        <td><span class="status-badge status-active">可用</span></td>
+                        <td><button class="copy-btn" onclick="copyToClipboard('https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8/')">复制</button></td>
+                    </tr>
+                    <tr>
+                        <td>非凡</td>
+                        <td>http://cj.ffzyapi.com/api.php/provide/vod/at/json/</td>
+                        <td><span class="status-badge status-active">可用</span></td>
+                        <td><button class="copy-btn" onclick="copyToClipboard('http://cj.ffzyapi.com/api.php/provide/vod/at/json/')">复制</button></td>
+                    </tr>
+                    <tr>
+                        <td>ikun</td>
+                        <td>https://ikunzyapi.com/api.php/provide/vod/</td>
+                        <td><span class="status-badge status-active">可用</span></td>
+                        <td><button class="copy-btn" onclick="copyToClipboard('https://ikunzyapi.com/api.php/provide/vod/')">复制</button></td>
+                    </tr>
+                    <tr>
+                        <td>天空</td>
+                        <td>http://api.tiankongapi.com/api.php/provide/vod/at/json</td>
+                        <td><span class="status-badge status-active">可用</span></td>
+                        <td><button class="copy-btn" onclick="copyToClipboard('http://api.tiankongapi.com/api.php/provide/vod/at/json')">复制</button></td>
+                    </tr>
+                    <tr>
+                        <td>无尽</td>
+                        <td>https://api.wujinapi.me/api.php/provide/vod/from/wjm3u8/at/json/</td>
+                        <td><span class="status-badge status-active">可用</span></td>
+                        <td><button class="copy-btn" onclick="copyToClipboard('https://api.wujinapi.me/api.php/provide/vod/from/wjm3u8/at/json/')">复制</button></td>
+                    </tr>
+                    <tr>
+                        <td>光速云</td>
+                        <td>https://api.guangsuapi.com/api.php/provide/vod/at/json/</td>
+                        <td><span class="status-badge status-active">可用</span></td>
+                        <td><button class="copy-btn" onclick="copyToClipboard('https://api.guangsuapi.com/api.php/provide/vod/at/json/')">复制</button></td>
+                    </tr>
+                    <tr>
+                        <td>极速</td>
+                        <td>https://jszyapi.com/api.php/provide/vod/at/json</td>
+                        <td><span class="status-badge status-active">可用</span></td>
+                        <td><button class="copy-btn" onclick="copyToClipboard('https://jszyapi.com/api.php/provide/vod/at/json')">复制</button></td>
+                    </tr>
+                    <tr>
+                        <td>速播</td>
+                        <td>https://subocaiji.com/api.php/provide/vod/at/json</td>
+                        <td><span class="status-badge status-active">可用</span></td>
+                        <td><button class="copy-btn" onclick="copyToClipboard('https://subocaiji.com/api.php/provide/vod/at/json')">复制</button></td>
+                    </tr>
+                    <tr>
+                        <td>黑木耳</td>
+                        <td>https://json02.heimuer.xyz/api.php/provide/vod/</td>
+                        <td><span class="status-badge status-active">可用</span></td>
+                        <td><button class="copy-btn" onclick="copyToClipboard('https://json02.heimuer.xyz/api.php/provide/vod/')">复制</button></td>
+                    </tr>
+                    <tr>
+                        <td>金鹰</td>
+                        <td>https://jyzyapi.com/provide/vod/at/json</td>
+                        <td><span class="status-badge status-active">可用</span></td>
+                        <td><button class="copy-btn" onclick="copyToClipboard('https://jyzyapi.com/provide/vod/at/json')">复制</button></td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+            
+            <div class="note-box">
+                <strong>提示：</strong> 搜索引擎的可用状态可能会随时变化。如果某个引擎无法使用，请尝试其他引擎。
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span class="material-icons">settings</span> 高级设置</h2>
+            <p>添加搜索引擎时，您可以配置以下高级选项：</p>
+            <ul>
+                <li><strong>使用代理</strong>：如果您所在的网络环境无法直接访问某些API，可以启用此选项</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>重要提示：</strong> 请确保您获取的视频资源不涉及版权问题。根据我们的<a href="./terms.html" style="color: inherit; text-decoration: underline;">用户协议</a>，严禁分享任何受版权保护的内容链接，违规者将被永久封禁账号且不予解封。
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span class="material-icons">help_outline</span> 常见问题</h2>
+            <p><strong>问：为什么我添加的搜索引擎无法使用？</strong></p>
+            <p>答：可能有以下几个原因：</p>
+            <ul>
+                <li>API地址输入错误</li>
+                <li>该API服务器暂时不可用</li>
+                <li>您的网络环境无法访问该API</li>
+                <li>API格式不符合苹果CMS标准</li>
+            </ul>
+            
+            <p><strong>问：如何判断一个搜索引擎的质量？</strong></p>
+            <p>答：一般来说，可以从以下几个方面判断：</p>
+            <ul>
+                <li>资源更新速度</li>
+                <li>资源覆盖范围（电影、电视剧、动漫等）</li>
+                <li>视频清晰度</li>
+                <li>服务器响应速度</li>
+            </ul>
+        </section>
+
+        <a href="help.html" class="back-to-home">
+            <span class="material-icons" style="vertical-align: middle;">arrow_back</span> 返回帮助中心
+        </a>
     </div>
 </body>
 </html>

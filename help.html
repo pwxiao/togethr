@@ -116,6 +116,21 @@
         .back-to-home:hover {
             text-decoration: underline;
         }
+        
+        .help-button {
+            display: inline-block;
+            background-color: var(--md-sys-color-primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .help-button:hover {
+            background-color: var(--md-sys-color-primary-dark);
+        }
     </style>
 </head>
 <body>
@@ -137,7 +152,7 @@
             </div>
             
             <div class="note-box">
-                <strong>注意：</strong> iOS版本目前处于测试阶段，某些功能可能尚未完善。我们正在持续优化体验。
+                <strong>注意：</strong> iOS版本目前处于测试阶段，你需要使用testflight安装，才能使用。testflight公测链接：<a href="https://testflight.apple.com/join/xk6vZNpD">https://testflight.apple.com/join/xk6vZNpD</a>
             </div>
         </section>
 
@@ -147,7 +162,7 @@
             <p>我们为了应对App Store审核，默认关闭了资源大厅的功能。以下是激活方法：</p>
             
             <ol class="step-list">
-                <li>进入App后，点击底部导航栏的"设置"选项</li>
+                <li>进入App后，点击"我的"界面的"设置"选项</li>
                 <li>在设置界面中找到"调试代码"功能</li>
                 <li>复制以下文字：<strong>"将大局逆转吧"</strong></li>
                 <li>将复制的文字粘贴到代码框中</li>
@@ -156,6 +171,27 @@
             
             <div class="note-box">
                 <strong>提示：</strong> 激活后，您将可以使用资源大厅、搜索影片等全部功能。此操作仅需执行一次，重启App后依然有效。
+            </div>
+        </section>
+
+        <section class="help-section">
+            <h2><span class="material-icons">search</span> 如何添加搜片引擎</h2>
+            <p>为了提供更好的搜索体验，我们支持添加自定义搜片引擎。这样您可以根据自己的需求，添加不同的视频源。</p>
+            
+            <ol class="step-list">
+                <li>在App中进入"搜索"页面</li>
+                <li>点击右上角的"+"图标</li>
+                <li>输入搜片引擎的名称和API地址</li>
+                <li>点击"保存"完成添加</li>
+            </ol>
+            
+            <div class="note-box">
+                <strong>详细说明：</strong> 关于搜片引擎的更多信息，包括推荐的引擎列表、API格式说明以及高级配置，请查看我们的搜片引擎帮助文档。
+                <br><br>
+                <a href="./search_engine_help.html" class="help-button">
+                    <span class="material-icons" style="vertical-align: middle; margin-right: 4px;">help_outline</span>
+                    查看搜片引擎帮助文档
+                </a>
             </div>
         </section>
 
@@ -180,7 +216,7 @@
             </ol>
             
             <div class="note-box">
-                <strong>重要提示：</strong> 请确保您获取的视频直链不涉及版权问题。根据我们的<a href="./terms.html">用户协议</a>，严禁提交或分享任何受版权保护的内容链接，违规者将被永久封禁账号且不予解封。
+                <strong>重要提示：</strong> 请确保您获取的视频直链不涉及版权问题。根据我们的<a href="./terms.html">用户协议</a>，严禁分享任何受版权保护的内容链接，违规者将被永久封禁账号且不予解封。
             </div>
         </section>
 
