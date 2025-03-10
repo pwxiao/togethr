@@ -160,6 +160,29 @@
             margin: 16px 0;
             border-radius: 4px;
         }
+
+        .visit-stats {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: rgba(25, 118, 210, 0.05);
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--md-sys-color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .visit-stats .material-icons {
+            font-size: 18px;
+        }
+        
+        #visit-counter {
+            font-weight: bold;
+            color: var(--md-sys-color-primary-dark);
+        }
     </style>
     <script>
         function copyToClipboard(text) {
@@ -169,7 +192,29 @@
                 console.error('复制失败: ', err);
             });
         }
+        
+        // 访问量统计功能
+        window.onload = function() {
+            // 从localStorage获取当前访问量
+            let visitCount = localStorage.getItem('searchEngineHelpVisits');
+            
+            // 如果是首次访问，初始化为0
+            if (!visitCount) {
+                visitCount = 0;
+            }
+            
+            // 访问量加1
+            visitCount = parseInt(visitCount) + 1;
+            
+            // 更新localStorage中的访问量
+            localStorage.setItem('searchEngineHelpVisits', visitCount);
+            
+            // 更新页面上的访问量显示
+            document.getElementById('visit-counter').innerText = visitCount;
+        }
     </script>
+    <!-- 不蒜子访问统计 -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </head>
 <body>
     <div class="header">
@@ -336,6 +381,11 @@
                 <li>服务器响应速度</li>
             </ul>
         </section>
+
+        <div class="visit-stats">
+            <span class="material-icons">visibility</span>
+            本页面总访问量 <span id="busuanzi_value_page_pv">0</span> 次
+        </div>
 
         <a href="help.html" class="back-to-home">
             <span class="material-icons" style="vertical-align: middle;">arrow_back</span> 返回帮助中心
