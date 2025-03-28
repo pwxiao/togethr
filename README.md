@@ -46,7 +46,7 @@
 | 平台 | 状态 | 下载方式 |
 |------|------|----------|
 | Android | ✅ 已发布 | [直接下载](https://www.123684.com/s/5lHyTd-bhRHv)  |
-| iOS | ⏳ 开发中 | 即将上线 |
+| iOS | ⏳TF公测 | [前往](https://testflight.apple.com/join/fqK2a1n5) |
 
 ### 使用方法
 
